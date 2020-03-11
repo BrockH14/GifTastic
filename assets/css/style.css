@@ -2,11 +2,20 @@
     margin: 5px;
     text-align: center;
     height: 40px;
-    background-color: rgb(58, 0, 124);
-    color: rgb(238, 224, 185);
+    background-color: rgb(58, 0, 124) !important;
+    color: rgb(238, 224, 185) !important;
     font-weight: bold;
     font-size: 20px;
 }
 body {
     background-color: rgb(145, 145, 145) !important;
+}
+h1{
+    color: rgb(48, 48, 48);
+    font-weight: bold !important;
+    font-size: 70px !important;
+}
+#userAdd{
+    background-color: rgb(58, 0, 124) !important;
+    color: rgb(238, 224, 185) !important;
 }

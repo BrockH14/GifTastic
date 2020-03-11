@@ -1,41 +1,21 @@
-
 var foodarr = ["banana", "apple", "orange", "pancake", "waffle", "coffee", "kit-kat", "turkey"];
-// var toggle = setInterval(runGif, 1000);
-var go = 0;
 
 function updateDisplay(){
     $(".btnGenLoc").empty();
     for (var i = 0; i < foodarr.length; i++){
-        var btnGen = $("<button class='GifBt' user-imput="+ foodarr[i] +">");
+        var btnGen = $("<button class='GifBt btn' user-imput="+ foodarr[i] +">");
         var p = $("<p>").text(foodarr[i]);
         btnGen.append(p)
         $(".btnGenLoc").append(btnGen);
     }
 }
 updateDisplay();
-if (go === 1){
-    $(".gif").on("click", function() {
-        var state = $(this).attr('data-state');
-        if (state === "still"){
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-            }
-        else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-            }
-        });
-}
-// function runGif(){
-    
-// };
 
 $("#userAdd").on("click", function(event) {
     event.preventDefault();
     var inFood = $("#inputFood").val().trim();
     foodarr.push(inFood);
     updateDisplay();
-    // setTimeout(runGif, 1000);
 });
 
 function generateGif(){
@@ -62,9 +42,23 @@ function generateGif(){
             userDiv.append(userImage);
             userDiv.append(p);
             $("#gifs-appear-here").prepend(userDiv);
-            go = 1;
             }
         });
+        setTimeout(runGif, 1000)
     });
 }
+function runGif(){
+    $(".gif").on("click", function() {
+        var state = $(this).attr('data-state');
+        if (state === "still"){
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+            }
+        else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+            }
+        });
+};
 generateGif()
+runGif();
