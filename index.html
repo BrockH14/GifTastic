@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GifTastica</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container mt-3 pt-4">
+        <div class="jumbotron mt-5 mb-5 pt-5">
+            <div class="row">
+                <div class="col-lg-12 pt-4">
+                    <div class="text-center">
+                        <h1>GifTastica</h1>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row gbtn">
+                <form>
+                    <div class="form-group">
+                        <label>Add Food Item</label>
+                        <input type="Food" class="form-control" id="inputFood" aria-describedby="discribe" placeholder="Add food">
+                        <small id="discribe" class="form-text text-muted">Add's a food type to the buttons list.</small>
+                    </div>
+                    <button id="userAdd" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center pb-3 btnGenLoc">
+                </div>
+            </div>
+            <div class="row">
+                <div id="gifs-appear-here">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="assets/javascript/game.js"></script>
+
+</body>
+</html>
