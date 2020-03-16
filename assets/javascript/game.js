@@ -16,6 +16,7 @@ $("#userAdd").on("click", function(event) {
     var inFood = $("#inputFood").val().trim();
     foodarr.push(inFood);
     updateDisplay();
+    generateGif();
 });
 
 function generateGif(){
@@ -44,21 +45,18 @@ function generateGif(){
             $("#gifs-appear-here").prepend(userDiv);
             }
         });
-        setTimeout(runGif, 1000)
+
     });
 }
-function runGif(){
-    $(".gif").on("click", function() {
-        var state = $(this).attr('data-state');
-        if (state === "still"){
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-            }
-        else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-            }
-        });
-};
+$(document.body).on("click", ".gif", function() {
+    var state = $(this).attr('data-state');
+    if (state === "still"){
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+        }
+    else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+        }
+  });
 generateGif()
-runGif();
